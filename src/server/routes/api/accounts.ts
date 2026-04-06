@@ -1397,7 +1397,7 @@ export async function accountsRoutes(app: FastifyInstance) {
       return reply.code(400).send({
         success: false,
         requiresVerification: err?.requiresVerification === true,
-        message: credentialMode === 'session'
+        message: credentialMode !== 'apikey'
           ? appendSessionTokenRebindHint(err?.message || 'Token 验证失败')
           : (err?.message || 'API Key 验证失败'),
       });

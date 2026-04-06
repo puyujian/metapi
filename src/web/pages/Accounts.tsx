@@ -1450,7 +1450,7 @@ export default function Accounts() {
                   style={inputStyle}
                 />
                 <textarea
-                  placeholder="粘贴 API Key，支持换行 / 空格 / 逗号批量添加"
+                  placeholder="粘贴 API Key"
                   value={tokenForm.accessToken}
                   onChange={(e) => { setTokenForm((f) => ({ ...f, accessToken: e.target.value, credentialMode: 'apikey' })); setVerifyResult(null); }}
                   style={{ ...inputStyle, fontFamily: 'var(--font-mono)', height: 72, resize: 'none' as const }}
@@ -1461,6 +1461,9 @@ export default function Accounts() {
                     {isBatchApiKeyInput ? '，添加时会逐条创建同站点连接并参与轮询' : ''}
                   </div>
                 )}
+                <div style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
+                  支持换行、空格、逗号批量粘贴多个 API Key。
+                </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                   <input
                     placeholder="用户 ID（可选）"
