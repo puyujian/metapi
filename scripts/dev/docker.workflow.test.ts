@@ -24,7 +24,7 @@ describe('docker workflows', () => {
     expect(ciWorkflow).not.toContain('images: 1467078763/metapi');
 
     expect(releaseWorkflow).toContain('DOCKERHUB_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/metapi');
-    expect(releaseWorkflow).not.toContain('            1467078763/metapi');
+    expect(releaseWorkflow).not.toContain('1467078763/metapi');
   });
 
   it('uses an armv7-capable node base image in the Dockerfile', () => {

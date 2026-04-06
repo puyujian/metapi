@@ -5,7 +5,7 @@ const accountCredentialModeSchema = z.enum(['auto', 'session', 'apikey']);
 const accountCreatePayloadSchema = z.object({
   siteId: z.number().int().positive(),
   username: z.string().optional(),
-  accessToken: z.string(),
+  accessToken: z.string().optional(),
   accessTokens: z.array(z.string()).optional(),
   apiToken: z.string().optional(),
   platformUserId: z.number().int().positive().optional(),
